@@ -191,21 +191,6 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 		}
 	}
 
-	//Get all the other topic to fill all the possible classifications
-	$query = "SELECT idTopic, label, url FROM topic WHERE idTopic NOT IN ( '" . implode($choosenTopics, "', '") . "' )
-				AND weight IS NOT NULL";
-	$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
-
-	if($result->num_rows > 0) {
-		$i=1;
-		while($row = $result->fetch_assoc()) {
-			$game["idTopic"] = $row['idTopic'];
-			$game["label"] = utf8_encode($row['label']);
-            $game["url"] = utf8_encode($row['label']);
-			array_push($games, $game);			
-		}
-	}
-	
 	//Then order by classification
 	usort($games, function($a, $b) {
 		return $a['idTopic'] - $b['idTopic'];

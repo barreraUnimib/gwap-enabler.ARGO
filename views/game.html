@@ -80,8 +80,7 @@
 		<div class="col-md-4 col-xs-6" ng-repeat="game in currentPage.games">
 		{{game.idTrueTopic}} </br>
 			<div class="grid-btn">
-				<img ng-src="{{game.url}}" alt="">
-				<button ng-class="{'selected' : game.idTopic == selectedIndex}" ng-click="itemClicked(game)" ng-disabled="value.length==1" class="btn btn-block btn-grid">{{game.label}}</button>
+				<button ng-class="{'selected' : game.idTopic == selectedIndex}" ng-click="itemClicked(game)" ng-disabled="value.length==1" class="btn btn-block btn-grid" id="btn-choices"><img ng-src="{{game.url}}" alt="" id="img-choices"></button>
 			</div>
 		</div>
 	</div>
