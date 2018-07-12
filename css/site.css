@@ -217,8 +217,14 @@ body {
 
 #game-picture {	
 	padding-bottom: 12px;	
-	position: relative;
+	position: center;
+	height: 50%;
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 
 #img-choices{
 	width: 337px;
@@ -509,10 +515,6 @@ a.btn-star {
 	margin-bottom: 0px;
 }
 
-.thumbnail.img{
-	width: 640px;
-	height: 640px;
-}
 
 .img-circle {
 	border-style: solid;
