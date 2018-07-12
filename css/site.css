@@ -216,7 +216,7 @@ body {
 }
 
 #game-picture {	
-	padding-bottom: 12px;	
+	padding-bottom: 0px;
 	position: center;
 	height: 50%;
 	width: 50%;
@@ -227,14 +227,15 @@ body {
 
 
 #img-choices{
-	width: 337px;
-	height: 395px;
+	width: 171px;
+	height: 200px;
 }
 
 #btn-choices{
-	width: 342px;
-	height: 400px;
+	width: 175px;
+	height: 210px;
 	padding:0;
+	margin: auto;
 }
 
 
@@ -580,7 +581,7 @@ a.btn-star {
 }
 
 .grid-btn {
-	height: 400px;
+	height: 220px;
 }
 
 .grid-btn-login {
