@@ -233,7 +233,7 @@ body {
 
 #btn-choices{
 	width: 175px;
-	height: 210px;
+	height: 205px;
 	padding:0;
 	margin: auto;
 }
@@ -581,7 +581,7 @@ a.btn-star {
 }
 
 .grid-btn {
-	height: 220px;
+	height: 210px;
 }
 
 .grid-btn-login {
