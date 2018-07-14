@@ -211,6 +211,11 @@ $scope.liftOff = function () {
 	}, 4000);	
 };
 
+$scope.choseCategory = function(category){
+	$scope.chosen = category;
+	$scope.startgame();
+}
+
 $scope.startgame = function () {
 	
 	if (!$cookies.get('gwap_idUser')){
