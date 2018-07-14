@@ -119,7 +119,7 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 	$query = 	"SELECT Q.* FROM
 				(
 				(
-				SELECT RT.idResource, RT.idTopic, T.label, RT.score, true as result
+				SELECT RT.idResource, RT.idTopic, T.label, T.url, RT.score, true as result
 				FROM  resource_has_topic AS RT
 				JOIN topic AS T ON T.idTopic = RT.idTopic
 				JOIN resource AS R ON R.idResource = RT.idResource
@@ -129,18 +129,18 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 				)
 				UNION
 				(
-				SELECT L.idResource, L.idTopic, T.label, RT.score, true as result
+				SELECT L.idResource, L.idTopic, T.label, T.url, RT.score, true as result
 				FROM logging L
 				JOIN topic AS T ON T.idTopic = L.idTopic
 				JOIN resource_has_topic AS RT ON RT.idResource = L.idResource AND RT.idTopic = L.idTopic
 				WHERE L.idResource = $idResource AND L.idUser <> $idUser AND L.chosen = 1
-				GROUP BY L.idResource, L.idTopic, T.label, RT.score
+				GROUP BY L.idResource, L.idTopic, T.label, T.url, RT.score
 				ORDER BY COUNT(L.idUser) DESC
 				LIMIT 1
 				)
 				UNION
 				(
-				SELECT RT.idResource, RT.idTopic, T.label, RT.score, true as result
+				SELECT RT.idResource, RT.idTopic, T.label, T.url, RT.score, true as result
 				FROM  resource_has_topic AS RT
 				JOIN topic AS T ON T.idTopic = RT.idTopic
 				JOIN resource AS R ON R.idResource = RT.idResource
@@ -162,6 +162,7 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 			$idTrueTopic = $row['idTopic'];
 			$choosenTopics[] = $row['idTopic'];
 			$game["label"] = utf8_encode($row['label']);
+			$game["url"] = utf8_encode($row['url']);
 			
 			true_response($mysqli, $idRound, $level, $idTrueTopic, $isGT);
 			
@@ -170,7 +171,7 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 	}
 
 	//Get all the other topics related to the resources that have been eventually chosen by a user
-	$query = 	"SELECT RT.idResource, RT.idTopic, T.label, RT.score
+	$query = 	"SELECT RT.idResource, RT.idTopic, T.label, T.url, RT.score
 				 FROM topic AS T
 				 JOIN resource_has_topic AS RT ON RT.idTopic = T.idTopic
 				 JOIN resource AS R ON R.idResource = RT.idResource
@@ -185,24 +186,11 @@ function games($mysqli, $idResource, $idUser, $upperThreshold, $idRound, $level,
 			$game["idTopic"] = $row['idTopic'];
 			$choosenTopics[] = $row['idTopic'];
 			$game["label"] = utf8_encode($row['label']);
+            $game["url"] = utf8_encode($row['url']);
 			array_push($games, $game);
 		}
 	}
 
-	//Get all the other topic to fill all the possible classifications
-	$query = "SELECT idTopic, label FROM topic WHERE idTopic NOT IN ( '" . implode($choosenTopics, "', '") . "' )
-				AND weight IS NOT NULL";
-	$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
-
-	if($result->num_rows > 0) {
-		$i=1;
-		while($row = $result->fetch_assoc()) {
-			$game["idTopic"] = $row['idTopic'];
-			$game["label"] = utf8_encode($row['label']);
-			array_push($games, $game);			
-		}
-	}
-	
 	//Then order by classification
 	usort($games, function($a, $b) {
 		return $a['idTopic'] - $b['idTopic'];
