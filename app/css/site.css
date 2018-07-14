@@ -173,6 +173,17 @@ body {
     color: #8E969E;
 }
 
+#img-right{
+	margin-top:15%;
+}
+
+#img-wrong{
+	margin-top: 15%;
+}
+
+
+
+
 .rank3 {
 	font-family: 'montserratlight';
     font-size: 17pt;
