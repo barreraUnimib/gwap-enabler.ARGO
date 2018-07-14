@@ -33,13 +33,15 @@ $scope.languageKey = 'it';
 $scope.rankLeaderboard = 0;
 $scope.rankTopten = 0;
 $scope.leaderboard = 0;
-$scope.topten = 0;	
+$scope.topten = 0;
+$scope.category = null; //used to set the category chosen by the user
 
 $scope.home = function () {
 	$scope.stop();
 	$scope.gameIsStart = 0;
 	$location.path("/home");
 };
+
 
 $scope.setUser = function(socialNetwork) {
 
