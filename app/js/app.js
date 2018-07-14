@@ -34,6 +34,11 @@ angular.module("gwap", ["ngRoute", "ngCookies", "infinite-scroll", "pascalprecht
 		data: { restricted: false }
 	});
 
+    $routeProvider.when("/category", {
+        templateUrl: "views/category.html",
+        data: { restricted: false }
+    });
+
 	$routeProvider.when("/myprofile", {
 		templateUrl: "views/myProfile.html",
 		controller: "myProfileCtrl",

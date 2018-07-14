@@ -204,8 +204,13 @@ body {
 	color: #8E969E;
 }
 
+div.category{
+	margin-top: 25px;
+}
+
+
 #ready {	
-	padding: 0 0 100px 0;
+	padding: 0 0 20px 0;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 }
@@ -429,6 +434,11 @@ a.btn-star {
 	color: #FFFFFF;
 	background-color: #54575e;
 	outline: none!important;
+}
+
+.mainImg{
+	width: 50%;
+	height: 50%;
 }
 
 .btn-grid.selected {
