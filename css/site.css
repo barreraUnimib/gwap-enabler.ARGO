@@ -216,28 +216,9 @@ body {
 }
 
 #game-picture {	
-	padding-bottom: 0px;
-	position: center;
-	height: 50%;
-	width: 50%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	padding-bottom: 12px;	
+	position: relative;
 }
-
-
-#img-choices{
-	width: 171px;
-	height: 200px;
-}
-
-#btn-choices{
-	width: 175px;
-	height: 205px;
-	padding:0;
-	margin: auto;
-}
-
 
 #partner-answer {
 	position: absolute;
@@ -402,14 +383,14 @@ a.btn-star {
 }
 
 .btn-toggle-on:hover, .btn-toggle-on:focus {
-	color: #FFFFFF;
+	color: #FFFFFF; 
 	outline: none!important;
 }
 
 .btn-grid {
 	font-size: 13pt;
 	font-weight: bold;
-	background: #cccccc;
+	background: #8e969e;
 	color: #FFFFFF;
 	height: 45px;
 }
@@ -516,7 +497,6 @@ a.btn-star {
 	margin-bottom: 0px;
 }
 
-
 .img-circle {
 	border-style: solid;
     border-width: 2.3pt;
@@ -581,7 +561,7 @@ a.btn-star {
 }
 
 .grid-btn {
-	height: 210px;
+	height: 60px;
 }
 
 .grid-btn-login {

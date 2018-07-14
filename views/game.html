@@ -57,7 +57,7 @@
 
 	<div id="game-picture">
 		<div class="thumbnail">
-			<img ng-src="{{currentPage.url}}" alt="" id="img-center">
+			<img ng-src="{{currentPage.url}}" alt="">
 			<img id="img-right" ng-style="{'visibility': showAnswerResult == 2 ? 'visible' : 'hidden'}" src="images/icona-right-answer.png" class="img-answer" alt="icona-right answer">
 			<img id="img-wrong" ng-style="{'visibility': showAnswerResult == 0 ? 'visible' : 'hidden'}" src="images/icona-wrong-answer.png" class="img-answer" alt="icona-wrong answer">
 		</div>
@@ -80,7 +80,7 @@
 		<div class="col-md-4 col-xs-6" ng-repeat="game in currentPage.games">
 		{{game.idTrueTopic}} </br>
 			<div class="grid-btn">
-				<button ng-class="{'selected' : game.idTopic == selectedIndex}" ng-click="itemClicked(game)" ng-disabled="value.length==1" class="btn btn-block btn-grid" id="btn-choices"><img ng-src="{{game.url}}" alt="" id="img-choices"></button>
+				<button ng-class="{'selected' : game.idTopic == selectedIndex}" ng-click="itemClicked(game)" ng-disabled="value.length==1" class="btn btn-block btn-grid">{{game.label | translate}}</button>
 			</div>
 		</div>
 	</div>
