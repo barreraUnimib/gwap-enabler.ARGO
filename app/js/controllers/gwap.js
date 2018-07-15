@@ -16,7 +16,6 @@
  * Contributors:
  *     Andrea Fiano, Gloria Re Calegari, Irene Celino.
  */
- 
 angular.module("gwap")
 .controller("gwapCtrl",function($scope, $rootScope, $http, $routeParams, $location, $cookies, $timeout, gwapService, $window) {
 $scope.gameIsStart = 0;
