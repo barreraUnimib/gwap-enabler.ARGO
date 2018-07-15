@@ -41,7 +41,7 @@
 			<tbody>
 				<tr ng-repeat="badge in badgeList | filter: timestamp " ng-class="{'disabled': badge.disabled }">
 					<td>
-						<!-- <img ng-src="{{badge.image}}" alt="{{badge.name}}"> -->
+						<img ng-src="{{badge.image}}" alt="{{badge.name}}">
 					</td>
 					<td>
 						<span>{{ badge.name }}</span><br/>

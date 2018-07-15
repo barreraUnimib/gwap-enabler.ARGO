@@ -70,7 +70,9 @@
 		<div class="col-xs-12 col-md-6">
 			<div ng-click="goTo('/badgelist')" id="panel-badges" class="panel-home text-center">
 				<div class="panel-home-title">{{ 'LAST_BADGES' | translate }}</div>
-				<div class="col-xs-4" ng-repeat="badge in userBadges | filter: { timestamp : '' } | limitTo: 3">{{badge.name}}</div>
+				<div class="col-xs-4" ng-repeat="badge in userBadges | filter: { timestamp : '' } | limitTo: 3">
+					<img alt="{{badge.name}}" ng-src="{{badge.image}}" src="{{badge.image}}">
+					{{badge.name}}</div>
 			</div>
 		</div>
 	</div>	
