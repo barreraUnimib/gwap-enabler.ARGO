@@ -213,16 +213,25 @@ $scope.liftOff = function () {
 };
 
 $scope.choseCategory = function(category){
-	$scope.chosen = category;
-	$scope.startgame();
+        $scope.chosen = category;
+        $scope.startgame();
 }
 
+$scope.controlLogin = function (){
+    if (!$cookies.get('gwap_idUser')) {
+        $location.path("/login");
+    }
+    else{
+        $location.path("/category");
+	}
+}
+
+
 $scope.startgame = function () {
-	
 	if (!$cookies.get('gwap_idUser')){
 		$location.path("/login");
 	}
-	else {		
+	else {
 		$scope.$emit('load');
 		$scope.endGameResults = [];
 		$scope.newBadge = [];

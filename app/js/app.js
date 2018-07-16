@@ -156,7 +156,7 @@ angular.module("gwap", ["ngRoute", "ngCookies", "infinite-scroll", "pascalprecht
 })
 .run(function($rootScope, $location, $cookies, $window, $translate, tmhDynamicLocale, ngDialog) {
 	
-	$rootScope.langKey = $cookies.get('gwap_userLocale') ? $cookies.get('gwap_userLocale') : 'en';	
+	$rootScope.langKey = $cookies.get('gwap_userLocale') ? $cookies.get('gwap_userLocale') : 'it';
 	$translate.use($rootScope.langKey);
 	tmhDynamicLocale.set($rootScope.langKey);
 	

@@ -22,15 +22,17 @@
 			<a href="" ng-click="goTo('/home')" data-toggle="tooltip" data-placement="auto" title="{{ 'HOME' | translate}}"><img src="images/icona-home.png" alt="home"></a>			
 		</div>
 		<div id="title" class="col-xs-8 text-center">
-			APP
+			PROFILO
 		</div>
 		<div id="menu" class="col-xs-2 text-right">		
 			<img src="images/icona-puntini.png" alt="menu" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			<div class="dropdown-toggle language-container" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-show="!user"> 
 				<span class="lang-sm" lang="{{langKey}}"></span>
 			</div>
-			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">				
-				<li><a ng-click="changeLanguage('en')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'en' }" lang="en"></span></a></li>
+			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+				<!-- To show english mode: -->
+				<!-- <li><a ng-click="changeLanguage('en')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'en' }" lang="en"></span></a></li> -->
+
 				<li><a ng-click="changeLanguage('it')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'it' }" lang="it"></span></a></li>
 				<li role="separator" class="divider" ng-show="user && user != 'GUEST'"></li>
 				<li><a ng-click="changeUser(user)" href="" ng-show="user && user != 'GUEST'">{{ 'LOGOUT' | translate }}</a></li>				

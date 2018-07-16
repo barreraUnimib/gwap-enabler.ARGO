@@ -28,8 +28,10 @@
 			<div class="dropdown-toggle language-container" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 
 				<span class="lang-sm" lang="{{langKey}}"></span>
 			</div>
-			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">				
-				<li><a ng-click="changeLanguage('en')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'en' }" lang="en"></span></a></li>
+			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+				<!-- To show english mode: -->
+				<!-- <li><a ng-click="changeLanguage('en')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'en' }" lang="en"></span></a></li> -->
+
 				<li><a ng-click="changeLanguage('it')"><span class="lang-sm lang-lbl" ng-class="{ 'bold': langKey == 'it' }" lang="it"></span></a></li>
 			</ul>
 		</div>		
