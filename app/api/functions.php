@@ -48,26 +48,24 @@ function get_client_ip() {
 
 //Function to obtain the levels of a game round, i.e. the resources to play with.
 //The numbers of total levels in a round is $nOfLevels, of this $ngt are of ground truth and are used to evaluate the reliability of the player
-function levels($mysqli, $idUser, $idRound){
+function levels($mysqli, $idUser, $idRound, $category){
 	$levels = array();
 	$level = array();
 	$parameters = parameters($mysqli);
 	
 	$upperThreshold = $parameters["upperThreshold"];
 	$nOfLevels = $parameters["nOfLevels"];
-
 	$noRows = false;
-		
 	$ngt = $parameters["nOfGT"];
 	$nres = ($nOfLevels - $ngt) ;
-	
 	//Get $nres resources ($noflevels levels of the round), except for the ones with witch the user has already played;
 	//$ngt are from ground truth for user reputation ($score > $upperThreshold)
 	$query = 	"(
 				SELECT idResource, url, 0 as gt
 				FROM resource
 				WHERE idResource NOT IN (SELECT DISTINCT idResource FROM logging WHERE idUser = $idUser)
-				AND idResource NOT IN (SELECT DISTINCT idResource FROM resource_has_topic WHERE score > $upperThreshold)				
+				AND idResource NOT IN (SELECT DISTINCT idResource FROM resource_has_topic WHERE score > $upperThreshold)
+				AND idCategory = $category		
 				ORDER BY orderBy
 				LIMIT $nres				
 				)		
@@ -77,6 +75,7 @@ function levels($mysqli, $idUser, $idRound){
 				FROM resource
 				WHERE idResource NOT IN (SELECT DISTINCT idResource FROM logging WHERE idUser = $idUser)
 				AND idResource IN (SELECT DISTINCT idResource FROM resource_has_topic WHERE score > $upperThreshold)
+				AND idCategory = $category		
 				ORDER BY orderBy
 				LIMIT $ngt
 				)						

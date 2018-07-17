@@ -30,9 +30,10 @@ $levels = array();
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $idUser = $request->idUser;
+$category = $request->category;
 
 $levels["round"] = gameRound($mysqli, $idUser);
-$levels["levels"] = levels($mysqli, $idUser, $levels["round"]["idRound"]); //, $nOfLevels);
+$levels["levels"] = levels($mysqli, $idUser, $levels["round"]["idRound"], $category); //, $nOfLevels);
 
 $json = $levels;
 

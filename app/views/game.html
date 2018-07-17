@@ -53,7 +53,12 @@
 		</div>
 	</div>
 
-	<div class="text-justify no-images" ng_show="data.resource && data.resource.length == 0">{{ 'NOT_ENOUGH_IMAGES' | translate }}</div>
+	<div class="text-justify no-images" ng_show="data.resource && data.resource.length == 0">
+		{{ 'NOT_ENOUGH_IMAGES' | translate }}
+		<button ng-click="goTo('/category')" class="btn btn-block btn-star">CAMBIA CATEGORIA</button>
+	</div>
+
+
 
 	<div id="game-picture">
 		<div class="thumbnail">

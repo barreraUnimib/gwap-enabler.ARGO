@@ -175,7 +175,7 @@ $scope.getLevels = function() {
 	return $http({
 		method  : 'POST',
 		url     : 'api/levels.php', 
-		data    : {'idUser': $cookies.get('gwap_idUser')}, //'nOfLevels': $scope.nOfLevels},
+		data    : {'idUser': $cookies.get('gwap_idUser'), 'category': $scope.category}, //'nOfLevels': $scope.nOfLevels},
 		headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
 	})
 	.success(function (data) {
@@ -213,7 +213,7 @@ $scope.liftOff = function () {
 };
 
 $scope.choseCategory = function(category){
-        $scope.chosen = category;
+        $scope.category = category;
         $scope.startgame();
 }
 
@@ -268,7 +268,8 @@ $scope.startgame = function () {
 				 console.log("post errore");   		 
 			});		
 		
-		});		
+		});
+
 	}
 };
 
