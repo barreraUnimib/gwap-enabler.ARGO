@@ -33,7 +33,9 @@ $scope.rankLeaderboard = 0;
 $scope.rankTopten = 0;
 $scope.leaderboard = 0;
 $scope.topten = 0;
-$scope.category = null; //used to set the category chosen by the user
+$scope.category = null; //used to set the category chosen by the user// $
+
+
 
 $scope.home = function () {
 	$scope.stop();
@@ -41,6 +43,27 @@ $scope.home = function () {
 	$location.path("/home");
 };
 
+$scope.analogy = "Istanza : Tipo = X : TipoX";
+
+$scope.topics = [5];
+for (var  i=0; i<5; i++){
+	$scope.topics[i] = "Risposta " + i;
+}
+
+$scope.insertAnalogy = function(analogy, topic0, topic1, topic2, topic3, topic4) {
+	//document.write($scope.topics[4]);
+    $http({
+        method  : 'POST',
+        url     : 'api/insertResource.php',
+        data    : {'analogy': analogy, 'topic0':topic0, 'topic1':topic1, 'topic2':topic2, 'topic3':topic3, 'topic4':topic4},
+        headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+    })
+        .success(function(data, status) {
+        })
+        .error(function(data, status) {
+			document.write("errore");
+        });
+};
 
 $scope.setUser = function(socialNetwork) {
 
@@ -524,6 +547,8 @@ if($cookies.get('gwap_idUser')) {
 	$scope.userName = $cookies.get('gwap_userName');
 	$scope.userCover = $cookies.get('gwap_userCover');
 	$scope.SocialNetwork = $cookies.get('gwap_userSocial');
-}	
+}
+
+
 	
 });

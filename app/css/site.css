@@ -733,3 +733,10 @@ label.game {
 .language-container {
 	padding-top: 6px;
 }
+
+container#insert{
+	color: black;
+}
+.insertAnalogy{
+	color: black;
+}
