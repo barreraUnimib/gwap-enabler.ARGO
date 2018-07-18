@@ -35,5 +35,4 @@ angular.module("gwap")
 		$scope.data.error = error;
 		$scope.$emit('unload');
 	});
-
 });

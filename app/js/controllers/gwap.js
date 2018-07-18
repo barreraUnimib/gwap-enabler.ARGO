@@ -43,19 +43,27 @@ $scope.home = function () {
 	$location.path("/home");
 };
 
+$scope.insertTotal = false;
 $scope.analogy = "Istanza : Tipo = X : TipoX";
+$scope.idCategory = 1;
+$scope.analogyUrl = "analogy/resource/(nome).png";
+
 
 $scope.topics = [5];
+$scope.topicsUrl = [5];
 for (var  i=0; i<5; i++){
 	$scope.topics[i] = "Risposta " + i;
+	$scope.topicsUrl[i] = "analogy/topic/(nome).png"
 }
 
-$scope.insertAnalogy = function(analogy, topic0, topic1, topic2, topic3, topic4) {
+
+$scope.insertAnalogy = function(analogy, idCategory, topic0, topic1, topic2, topic3, topic4) {
 	//document.write($scope.topics[4]);
+	//document.write(analogyUrl);
     $http({
         method  : 'POST',
         url     : 'api/insertResource.php',
-        data    : {'analogy': analogy, 'topic0':topic0, 'topic1':topic1, 'topic2':topic2, 'topic3':topic3, 'topic4':topic4},
+        data    : {'analogy': analogy, 'idCategory': idCategory, 'topic0':topic0, 'topic1':topic1, 'topic2':topic2, 'topic3':topic3, 'topic4':topic4},
         headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     })
         .success(function(data, status) {
@@ -64,6 +72,7 @@ $scope.insertAnalogy = function(analogy, topic0, topic1, topic2, topic3, topic4)
 			document.write("errore");
         });
 };
+
 
 $scope.setUser = function(socialNetwork) {
 

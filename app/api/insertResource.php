@@ -29,6 +29,7 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
 $resource = $request->analogy;
+$idCategory = $request->idCategory;
 $topic0 = $request->topic0;
 $topic1 = $request->topic1;
 $topic2 = $request->topic2;
@@ -37,7 +38,7 @@ $topic4 = $request->topic4;
 
 
     //INSERT resource
-    $insert_row = $mysqli->query("INSERT INTO resource (label) VALUES ('$resource')");
+    $insert_row = $mysqli->query("INSERT INTO resource (idCategory, label, url) VALUES ($idCategory,'$resource', 'analogy/resource/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -58,7 +59,7 @@ $topic4 = $request->topic4;
 
 
     //INSERT topic0
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic0', 'NUOVO')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic0', 'NUOVO', 'analogy/topic/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -86,7 +87,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic1
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic1', 'NUOVO')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic1', 'NUOVO', 'analogy/topic/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -114,7 +115,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic2
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic2', 'NUOVO')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic2', 'NUOVO', 'analogy/topic/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -142,7 +143,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic3
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic3', 'NUOVO')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic3', 'NUOVO', 'analogy/topic/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -170,7 +171,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic4
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic4', 'NUOVO')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic4', 'NUOVO', 'analogy/topic/(nome).png')");
 
     if($insert_row){
         //print $insert_row;
@@ -190,6 +191,14 @@ $topic4 = $request->topic4;
     $idTopic4 = $rowTop[0];
     //INSERT resource_has_topic0
     $insert_row = $mysqli->query("INSERT INTO resource_has_topic (idResource, idTopic, score) VALUES ($idResource, $idTopic4, 0)");
+
+    if($insert_row){
+        //print $insert_row;
+    }else{
+        die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+    }
+
+    $insert_row = $mysqli->query("INSERT INTO resource_has_topic (idResource, idTopic, score) VALUES ($idResource, 6, 0)");
 
     if($insert_row){
         //print $insert_row;

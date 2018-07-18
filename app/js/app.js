@@ -33,6 +33,11 @@ angular.module("gwap", ["ngRoute", "ngCookies", "infinite-scroll", "pascalprecht
 		templateUrl: "views/home.html",
 		data: { restricted: false }
 	});
+    $routeProvider.when("/evaluation", {
+        templateUrl: "views/evaluation.html",
+		controller: "evaluationCtrl",
+        data: { restricted: false }
+    });
 
 	$routeProvider.when("/insert", {
         templateUrl: "views/insertResource.html",

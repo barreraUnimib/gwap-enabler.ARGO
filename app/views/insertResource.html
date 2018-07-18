@@ -28,16 +28,36 @@
     </div>
 </div>
 <div class="container" id="insert">
-    <p>Analogia:    <input type="text" class ="insertAnalogy" ng-model="analogy"></p>
-    <p>Risposte:</p>
-    <p>1: <input type="text" class ="insertAnalogy" ng-model="topics[0]"></p>
-    <p>2: <input type="text" class ="insertAnalogy" ng-model="topics[1]"></p>
-    <p>3: <input type="text" class ="insertAnalogy" ng-model="topics[2]"></p>
-    <p>4: <input type="text" class ="insertAnalogy" ng-model="topics[3]"></p>
-    <p>5: <input type="text" class ="insertAnalogy" ng-model="topics[4]"></p>
+    <p class="center">Analogia:</p>
+
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="analogy">
+        <select name="idCategory" ng-model="data.idCategory">
+            <option value="1">Personaggi Famosi</option>
+            <option value="2">Musica</option>
+            <option value="3">Cinematografia</option>
+        </select>
+    </p>
+    <p class="center">Risposte:</p>
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="topics[0]">
+    </p>
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="topics[1]">
+    </p>
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="topics[2]">
+    </p>
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="topics[3]">
+    </p>
+    <p class="center">
+        <input type="text" class ="insertAnalogy" ng-model="topics[4]">
+    </p>
+
 </div>
 <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <button ng-click="insertAnalogy(analogy, topics[0], topics[1], topics[2], topics[3], topics[4])" class="btn btn-block btn-star">INSERISCI</button>
+    <button ng-if="!insertTotal" ng-click="insertAnalogy(analogy, idCategory, topics[0], topics[1], topics[2], topics[3], topics[4])" class="btn btn-block btn-star">INSERISCI ANALOGIA BASE</button>
 </div>
 <script>
     $(function () {
