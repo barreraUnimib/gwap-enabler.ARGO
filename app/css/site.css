@@ -769,3 +769,9 @@ img.cefriel{
 	width: 30%;
 	height: 30%;
 }
+
+div.noPadding{
+	padding-bottom: 0px;
+	background-repeat: no-repeat;
+	background-position: center bottom
+}
