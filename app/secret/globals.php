@@ -22,6 +22,6 @@ $GLOBALS['admin_password'] = 'admin_password';
 $GLOBALS['DB_NAME'] = 'gwap-enabler.argo';
 $GLOBALS['DB_HOST'] = 'localhost';
 $GLOBALS['DB_USER'] = 'root';
-$GLOBALS['DB_PASS'] = 'root';
+$GLOBALS['DB_PASS'] = '';
 
 ?>
