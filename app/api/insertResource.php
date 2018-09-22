@@ -36,7 +36,7 @@ $topic2 = $request->topic2;
 $topic3 = $request->topic3;
 $topic4 = $request->topic4;
 
-
+echo "document.write("Qui ci siamo arrivati");";
     //INSERT resource
     $insert_row = $mysqli->query("INSERT INTO resource (idCategory, label, url) VALUES ($idCategory,'$resource', 'analogy/resource/(nome).png')");
 
