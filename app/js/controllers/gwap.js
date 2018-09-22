@@ -67,7 +67,6 @@ $scope.insertAnalogy = function(analogy, idCategory, topic0, topic1, topic2, top
         headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     })
         .success(function(data, status) {
-            document.write("dice di riuscirci e poi non lo infila");
         })
         .error(function(data, status) {
 			document.write("errore");
