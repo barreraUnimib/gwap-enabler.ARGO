@@ -67,10 +67,9 @@ $scope.insertAnalogy = function(analogy, idCategory, topic0, topic1, topic2, top
         headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     })
         .success(function(data, status) {
-        	document.write("Sembrerebbe essere andato tutto bene...e invece...");
         })
         .error(function(data, status) {
-			document.write("fanculo");
+			document.write("errore");
         });
 };
 

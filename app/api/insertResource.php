@@ -37,7 +37,7 @@ $topic3 = $request->topic3;
 $topic4 = $request->topic4;
 
     //INSERT resource
-    $insert_row = $mysqli->query("INSERT INTO resource (idCategory, label, url) VALUES ($idCategory,'$resource', 'analogy/resource/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO resource (idCategory, label) VALUES ($idCategory,'$resource");
 
     if($insert_row){
         //print $insert_row;
@@ -57,7 +57,7 @@ $topic4 = $request->topic4;
     $idResource = $rowRes[0];
 
     //INSERT topic0
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic0', 'NUOVO', 'analogy/topic/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic0', 'NUOVO')");
 
     if($insert_row){
         //print $insert_row;
@@ -85,7 +85,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic1
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic1', 'NUOVO', 'analogy/topic/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic1', 'NUOVO')");
 
     if($insert_row){
         //print $insert_row;
@@ -113,7 +113,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic2
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic2', 'NUOVO', 'analogy/topic/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic2', 'NUOVO')");
 
     if($insert_row){
         //print $insert_row;
@@ -141,7 +141,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic3
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic3', 'NUOVO', 'analogy/topic/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic3', 'NUOVO')");
 
     if($insert_row){
         //print $insert_row;
@@ -169,7 +169,7 @@ $topic4 = $request->topic4;
     }
 
     //INSERT topic4
-    $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic4', 'NUOVO', 'analogy/topic/(nome).png')");
+    $insert_row = $mysqli->query("INSERT INTO topic (label, value) VALUES ('$topic4', 'NUOVO')");
 
     if($insert_row){
         //print $insert_row;
