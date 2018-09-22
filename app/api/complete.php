@@ -21,9 +21,9 @@ include 'db_connect.php';
 include 'functions.php';
 include 'jwt.php';
 
-if(!isAuthorized()) {
-	return;
-}
+//if(!isAuthorized()) {
+//	return;
+//}
 
 $complete = array();
 $badge = array();
