@@ -408,7 +408,7 @@ $scope.completeRound = function () {
 	.success(function(data, status) {
 		$scope.newBadge = data.badges;
 		$scope.missingPoints = data.missingPoints;					
-		$scope.leaderboard = data.position['leaderboard'];
+		$scope.leaderboard = 4;
 		$scope.topten = data.position['topten'];
 		
 		$scope.gameIsStart = 0;	
