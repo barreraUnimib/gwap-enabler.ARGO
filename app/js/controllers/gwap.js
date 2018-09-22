@@ -70,7 +70,7 @@ $scope.insertAnalogy = function(analogy, idCategory, topic0, topic1, topic2, top
         	document.write("Sembrerebbe essere andato tutto bene...e invece...");
         })
         .error(function(data, status) {
-			document.write("errore");
+			document.write("fanculo");
         });
 };
 
