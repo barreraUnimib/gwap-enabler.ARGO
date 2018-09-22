@@ -21,9 +21,7 @@ include 'db_connect.php';
 include 'functions.php';
 include 'jwt.php';
 
-if(!isAuthorized()) {
-    return;
-}
+
 
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
@@ -56,7 +54,6 @@ $topic4 = $request->topic4;
     $resultResource = $mysqli->query($queryRes) or die($mysqli->error.__LINE__);
     $rowRes=mysqli_fetch_array($resultResource,MYSQLI_NUM);
     $idResource = $rowRes[0];
-
 
     //INSERT topic0
     $insert_row = $mysqli->query("INSERT INTO topic (label, value, url) VALUES ('$topic0', 'NUOVO', 'analogy/topic/(nome).png')");
