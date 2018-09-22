@@ -20,7 +20,7 @@
 $GLOBALS['jwt_secret'] = 'jwt_secret';
 $GLOBALS['admin_password'] = 'admin_password';
 $GLOBALS['DB_NAME'] = 'gwap-enabler.argo';
-$GLOBALS['DB_HOST'] = 'localhost';
+$GLOBALS['DB_HOST'] = 'localhos';
 $GLOBALS['DB_USER'] = 'root';
 $GLOBALS['DB_PASS'] = 'root';
 
