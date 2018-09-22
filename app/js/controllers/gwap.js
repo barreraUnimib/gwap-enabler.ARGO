@@ -409,7 +409,7 @@ $scope.completeRound = function () {
 		$scope.newBadge = data.badges;
 		$scope.missingPoints = data.missingPoints;					
 		$scope.leaderboard = 4;
-		$scope.topten = data.position['topten'];
+		$scope.topten = 5;
 		
 		$scope.gameIsStart = 0;	
 		$location.path("/gameover");
