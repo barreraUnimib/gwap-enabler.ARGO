@@ -21,7 +21,9 @@ include 'db_connect.php';
 include 'functions.php';
 include 'jwt.php';
 
-
+if(!isAuthorized()) {
+    return;
+}
 
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
