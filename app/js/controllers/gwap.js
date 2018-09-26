@@ -109,7 +109,7 @@ $scope.setUser = function(socialNetwork) {
 					if(toUrl) {
 						$location.path(toUrl);	
 					} else {
-						$location.path('/');
+						$location.path('/category');
 					}				
 				});	
 			});
@@ -139,7 +139,7 @@ $scope.setUser = function(socialNetwork) {
 			if(toUrl && allowAnonymous) {
 				$location.path(toUrl);	
 			} else {
-				$location.path('/');
+				$location.path('/category');
 			}				
 		});	
 	}
